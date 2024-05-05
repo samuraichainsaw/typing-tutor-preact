@@ -2,13 +2,13 @@ import { render } from 'preact';
 
 import './style.css';
 import { useEffect, useState } from 'preact/hooks';
-import { parseWords } from './utils';
+import { parseWords, wordList } from './utils';
 import Word from './components/Word';
 
 
 
 export function App() {
-	const [words,setWords] = useState<Array<string>|null>(null);
+	const [words,setWords] = useState<Array<string>|null>(wordList);
 	const [selectedWord, setSelectedWord] = useState<string|null>(null);
 	const [index, setIndex] = useState<number>(-1);
 	useEffect(()=>{
